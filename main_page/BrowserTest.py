@@ -8,6 +8,9 @@ driver.maximize_window()
 
 title = driver.title
 
+getphonetxt = driver.find_element_by_xpath("//span[text()='+919711-111-558']")
+print(getphonetxt)
+
 print(title)
 
 assert "Selenium" in title
