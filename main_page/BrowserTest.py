@@ -1,5 +1,5 @@
 from selenium import  webdriver
-import selenium
+import time
 
 driver = webdriver.Chrome(executable_path="/Volumes/Macintosh HD/For Mac/python project/Browserdrivers/chromedriver")
 
@@ -8,18 +8,17 @@ driver.get(
 
 driver.maximize_window()
 
-Firstname = driver.find_element_by_xpath("//*[@name='firstname']")
-Firstname.send_keys("cheese!")
+Firstname = driver.find_element_by_xpath("//*[@name='firstname']").send_keys("walker")
+Lastname = driver.find_element_by_xpath("//*[@name='lastname']").send_keys("paul")
+Mobileno = driver.find_element_by_xpath("//*[contains(@name,'reg_email__')]").send_keys("9839384948")
 
-Lastname = driver.find_element_by_xpath("//*[@name='lastname']")
-Mobileno = driver.find_element_by_xpath("//*[contains(@name,'reg_email__')]")
-
-Password = driver.find_element_by_xpath("//*[@type='password']")
+Password = driver.find_element_by_xpath("//*[@type='password']").send_keys("Walker")
 
 Day = driver.find_element_by_xpath("//*[@id='day']/option[17]")
 Month = driver.find_element_by_xpath("//*[@id='month']/option[7]")
 Year = driver.find_element_by_xpath("//*[@id='year']/option[@value='1999']")
-Gender = driver.find_element_by_xpath("//label[contains(.,'Male')]")
+Gender = driver.find_element_by_xpath("//label[contains(.,'Male')]").click()
 
+time.sleep(20)
 driver.close()
 driver.quit()
