@@ -15,7 +15,7 @@ Password = driver.find_element_by_xpath("//*[@type='password']")
 Day = driver.find_element_by_xpath("//*[@id='day']/option[17]")
 Month = driver.find_element_by_xpath("//*[@id='month']/option[7]")
 Year = driver.find_element_by_xpath("//*[@id='year']/option[@value='1999']")
-
+Gender = driver.find_element_by_xpath("//label[contains(.,'Male')]")
 
 
 
