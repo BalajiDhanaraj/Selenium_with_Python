@@ -1,4 +1,5 @@
-from selenium import webdriver
+from selenium import  webdriver
+import selenium
 
 driver = webdriver.Chrome(executable_path="/Volumes/Macintosh HD/For Mac/python project/Browserdrivers/chromedriver")
 
@@ -8,6 +9,8 @@ driver.get(
 driver.maximize_window()
 
 Firstname = driver.find_element_by_xpath("//*[@name='firstname']")
+Firstname.send_keys("cheese!")
+
 Lastname = driver.find_element_by_xpath("//*[@name='lastname']")
 Mobileno = driver.find_element_by_xpath("//*[contains(@name,'reg_email__')]")
 
