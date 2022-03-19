@@ -13,12 +13,12 @@ driver.get(
 driver.maximize_window()
 
 ## implicitly wait is use to delay the website, this tie down with driver not the element
-# driver.implicitly_wait(50)
+# driver.implicitly_wait(40)
 
 Firstname = driver.find_element(by=By.XPATH,value="//*[@name='firstname']").send_keys("walker")
 
 ## explicity wait is use to delay the particular element in web
-WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//*[@name='lastname']")))
+WebDriverWait(driver,50).until(EC.presence_of_element_located((By.XPATH,"//*[@name='lastname']"))).send_keys('walker')
 
 # Lastname = driver.find_element(by=By.XPATH,value="//*[@name='lastname']").send_keys("paul")
 
@@ -32,6 +32,6 @@ Password = driver.find_element(by=By.XPATH,value="//*[@type='password']").send_k
 Gender = driver.find_element(by=By.XPATH,value="//label[contains(.,'Male')]").click()
 
 
-time.sleep(20)
+# time.sleep(20)
 driver.close()
 driver.quit()
