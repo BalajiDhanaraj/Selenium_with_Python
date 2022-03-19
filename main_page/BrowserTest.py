@@ -1,5 +1,9 @@
 from selenium import  webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
+
 
 driver = webdriver.Chrome(executable_path="/Volumes/Macintosh HD/For Mac/python project/Browserdrivers/chromedriver")
 
@@ -8,16 +12,25 @@ driver.get(
 
 driver.maximize_window()
 
-Firstname = driver.find_element_by_xpath("//*[@name='firstname']").send_keys("walker")
-Lastname = driver.find_element_by_xpath("//*[@name='lastname']").send_keys("paul")
-Mobileno = driver.find_element_by_xpath("//*[contains(@name,'reg_email__')]").send_keys("9839384948")
+## implicitly wait is use to delay the website, this tie down with driver not the element
+# driver.implicitly_wait(50)
 
-Password = driver.find_element_by_xpath("//*[@type='password']").send_keys("Walker")
+Firstname = driver.find_element(by=By.XPATH,value="//*[@name='firstname']").send_keys("walker")
 
-Day = driver.find_element_by_xpath("//*[@id='day']/option[17]")
-Month = driver.find_element_by_xpath("//*[@id='month']/option[7]")
-Year = driver.find_element_by_xpath("//*[@id='year']/option[@value='1999']")
-Gender = driver.find_element_by_xpath("//label[contains(.,'Male')]").click()
+## explicity wait is use to delay the particular element in web
+WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,"//*[@name='lastname']")))
+
+# Lastname = driver.find_element(by=By.XPATH,value="//*[@name='lastname']").send_keys("paul")
+
+Mobileno = driver.find_element(by=By.XPATH,value="//*[contains(@name,'reg_email__')]").send_keys("9839384948")
+
+Password = driver.find_element(by=By.XPATH,value="//*[@type='password']").send_keys("Walker")
+#
+# Day = driver.find_element_by_xpath("//*[@id='day']/option[17]")
+# Month = driver.find_element_by_xpath("//*[@id='month']/option[7]")
+# Year = driver.find_element_by_xpath("//*[@id='year']/option[@value='1999']")
+Gender = driver.find_element(by=By.XPATH,value="//label[contains(.,'Male')]").click()
+
 
 time.sleep(20)
 driver.close()
