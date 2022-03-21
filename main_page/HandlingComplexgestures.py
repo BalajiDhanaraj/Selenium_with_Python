@@ -58,9 +58,19 @@ driver.quit()
 driver.close()"""
 
 
-##
+## Drag and Drop
 
+driver.get("https://jqueryui.com/resources/demos/droppable/default.html")
 
+driver.implicitly_wait(50)
+
+drag = driver.find_element(by=By.ID,value="draggable")
+drop = driver.find_element(by=By.ID,value="droppable")
+
+ActionChains(driver).drag_and_drop(drag,drop).perform()
+
+driver.close()
+driver.quit()
 
 
 
