@@ -25,7 +25,7 @@ driver.quit()
 
 
 
-### Moving Sliders
+"""### Moving Sliders
 
 driver.get("http://demo.automationtesting.in/Slider.html")
 driver.implicitly_wait(60)
@@ -43,13 +43,22 @@ print(w,h)
 ActionChains(driver).drag_and_drop_by_offset(slider,w/2,0).perform()
 driver.quit()
 driver.close()
+"""
+
+"""### Resizable
+
+driver.get("https://jqueryui.com/resources/demos/resizable/default.html")
+driver.implicitly_wait(60)
+
+resizable = driver.find_element(by=By.XPATH,value="//div[@class='ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se']")
+
+ActionChains(driver).drag_and_drop_by_offset(resizable,500,500).perform()
+
+driver.quit()
+driver.close()"""
 
 
-
-
-
-
-
+##
 
 
 
