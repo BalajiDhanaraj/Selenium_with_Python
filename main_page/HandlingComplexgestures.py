@@ -58,7 +58,7 @@ driver.quit()
 driver.close()"""
 
 
-## Drag and Drop
+"""## Drag and Drop
 
 driver.get("https://jqueryui.com/resources/demos/droppable/default.html")
 
@@ -70,15 +70,17 @@ drop = driver.find_element(by=By.ID,value="droppable")
 ActionChains(driver).drag_and_drop(drag,drop).perform()
 
 driver.close()
-driver.quit()
+driver.quit()"""
 
+## Right click on the img or context
 
+driver.get("https://deluxe-menu.com/popup-mode-sample.html")
 
+driver.implicitly_wait(50)
 
+right = driver.find_element(by=By.XPATH,value="//img[@src='data-samples/images/popup_pic.gif']")
 
-
-
-
+ActionChains(driver).context_click(right).perform()
 
 
 
