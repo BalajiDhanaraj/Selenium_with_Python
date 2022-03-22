@@ -22,7 +22,7 @@ alert.accept()
 driver.close()
 driver.quit()"""
 
-## Switch to Iframes
+"""## Switch to Iframes
 
 driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_submit_get")
 
@@ -34,11 +34,29 @@ driver.find_element(by=By.XPATH,value="//input[@id='mySubmit']").click()
 
 driver.switch_to.default_content()
 
-frames = driver.find_element(by=By.TAG_NAME,value="iframe")
+frames = driver.find_elements(by=By.TAG_NAME,value="iframe")
 
 for frame in frames:
     print(frame.get_attribute("id"))
 
 
 driver.close()
+driver.quit()"""
+
+## Switch to another tab
+
+driver.get("http://www.way2automation.com/")
+
+driver.implicitly_wait(50)
+time.sleep(2)
+
+
+
+driver.close()
 driver.quit()
+
+
+
+
+
+
