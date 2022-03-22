@@ -78,12 +78,19 @@ driver.get("https://deluxe-menu.com/popup-mode-sample.html")
 
 driver.implicitly_wait(50)
 
+time.sleep(2)
+
 right = driver.find_element(by=By.XPATH,value="//img[@src='data-samples/images/popup_pic.gif']")
-
+time.sleep(2)
 ActionChains(driver).context_click(right).perform()
+time.sleep(2)
+clickproduct = driver.find_element(by=By.XPATH,value="//td[contains(text(),'Product Info')]")
+time.sleep(2)
+ActionChains(driver).context_click(clickproduct).perform()
 
-
-
+time.sleep(2)
+driver.close()
+driver.quit()
 
 
 
