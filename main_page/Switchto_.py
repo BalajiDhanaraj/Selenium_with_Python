@@ -50,8 +50,6 @@ driver.get("http://www.way2automation.com/")
 driver.implicitly_wait(50)
 time.sleep(2)
 
-
-
 driver.close()
 driver.quit()
 
