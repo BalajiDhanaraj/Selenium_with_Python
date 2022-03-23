@@ -47,8 +47,21 @@ driver.quit()"""
 
 driver.get("http://www.way2automation.com/")
 
-driver.implicitly_wait(50)
-time.sleep(2)
+driver.find_element_by_xpath("//*[@id=\"wrapper\"]/header/div[2]/div/div[2]/div/a[1]").click()
+
+# windows = driver.window_handles
+#
+# for window in windows:
+#     print(window)
+#     driver.switch_to.window(window)
+
+driver.switch_to.window(driver.window_handles[1])
+
+driver.find_element_by_id("user_email").send_keys("trainer@way2automation.com")
+
+# driver.close()
+# driver.switch_to.window(driver.window_handles[0])
+# driver.close()
 
 driver.close()
 driver.quit()
