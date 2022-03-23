@@ -20,13 +20,16 @@ print("In iframe ")
 driver.execute_script("myFunction()")
 driver.switch_to.default_content()
 
+
 elem = driver.find_element(by=By.ID,value="mySubmit")
 driver.execute_script("arguments[0].style.border='3px solid red' ",elem)
-
+driver.save_screenshot("/Volumes/Macintosh HD/For Mac/python project/Selenium_with_Python/main_page/screenshot/error.jpg")
 
 print("Out of iframes ")
 driver.close()
 driver.quit()
+
+
 
 
 
