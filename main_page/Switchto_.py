@@ -43,11 +43,11 @@ for frame in frames:
 driver.close()
 driver.quit()"""
 
-## Switch to another tab
+## Switch to popup window
 
 driver.get("http://www.way2automation.com/")
 
-driver.find_element_by_xpath("//*[@id=\"wrapper\"]/header/div[2]/div/div[2]/div/a[1]").click()
+driver.find_element(by=By.XPATH,value="//*[@id=\"wrapper\"]/header/div[2]/div/div[2]/div/a[1]").click()
 
 # windows = driver.window_handles
 #
@@ -65,6 +65,9 @@ driver.find_element_by_id("user_email").send_keys("trainer@way2automation.com")
 
 driver.close()
 driver.quit()
+
+## Switch to another window
+
 
 
 
