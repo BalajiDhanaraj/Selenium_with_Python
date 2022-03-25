@@ -46,23 +46,25 @@ driver.quit()
 
 ## Taking the full screenshot of the website
 
-driver.get("http://www.way2automation.com/")
-
+driver.get("https://www.w3schools.com/")
+driver.maximize_window()
 driver.implicitly_wait(50)
 time.sleep(2)
 
 chrome_options = webdriver.ChromeOptions()
 
+print(driver.get_window_size())
+
+
+
 # driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),options=chrome_options)
 
 S = lambda X: driver.execute_script('return document.body.parentNode.scroll'+X)
-
-driver.set_window_size(S('Width'),S('Height'))
-
+driver.set_window_size(S('Width'),S('Height')) # May need manual adjustment
 driver.find_element(by=By.TAG_NAME,value="body").screenshot("/Volumes/Macintosh HD/For Mac/python project/Selenium_with_Python/main_page/screenshot/full.png")
 
-driver.quit()
-driver.close()
+# driver.quit()
+# driver.close()
 
 
 
