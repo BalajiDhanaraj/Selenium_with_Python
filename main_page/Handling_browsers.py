@@ -20,12 +20,13 @@ chrome_options.add_experimental_option("prefs",prefs)
 #
 # driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),options=chrome_options)
 
-driver.get("http://www.google.com")
+driver.get("https://in.bookmyshow.com/buytickets/the-kashmir-files-chennai/movie-chen-ET00110845-MT/20220325")
 driver.maximize_window()
 
 print(driver.title)
 
-
+driver.close()
+driver.quit()
 
 
 
