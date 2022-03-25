@@ -3,12 +3,14 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 import time
-
+import time
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
 from selenium.webdriver.remote.webelement import WebElement
 
 driver = webdriver.Chrome("/Volumes/Macintosh HD/For Mac/python project/Browserdrivers/chromedriver")
 
-## Execute the javascript function directly
+"""## Execute the javascript function directly
 
 driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_submit_get")
 
@@ -40,3 +42,28 @@ capture_screenshot(driver, "Test2")
 print("Out of iframes ")
 driver.close()
 driver.quit()
+"""
+
+## Taking the full screenshot of the website
+
+driver.get("http://www.way2automation.com/")
+
+driver.implicitly_wait(50)
+time.sleep(2)
+
+chrome_options = webdriver.ChromeOptions()
+
+# driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),options=chrome_options)
+
+S = lambda X: driver.execute_script('return document.body.parentNode.scroll'+X)
+
+driver.set_window_size(S('Width'),S('Height'))
+
+driver.find_element(by=By.TAG_NAME,value="body").screenshot("/Volumes/Macintosh HD/For Mac/python project/Selenium_with_Python/main_page/screenshot/full.png")
+
+driver.quit()
+driver.close()
+
+
+
+
