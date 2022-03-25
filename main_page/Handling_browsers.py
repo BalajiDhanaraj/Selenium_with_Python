@@ -10,13 +10,14 @@ driver.implicitly_wait(50)
 time.sleep(2)
 
 # chrome_options = Options()
-
 chrome_options = webdriver.ChromeOptions()
+
+chrome_options.headless=False
 
 prefs = {"profile.default_content_setting_values.notifications" : 2}
 chrome_options.add_experimental_option("prefs",prefs)
 
-# chrome_options.headless = True
+# chrome_options.headless
 #
 # driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),options=chrome_options)
 
