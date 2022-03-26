@@ -1,6 +1,6 @@
 import pytest
 
-""" Using Maker """
+""" Using Maker  and parametrize """
 
 @pytest.mark.functional
 def test_login():
@@ -13,3 +13,20 @@ def test_user_reg():
 @pytest.mark.functional
 def test_compose_email():
     print("Executing compose email",end=" ")
+
+
+def get_data():
+    return [
+        ("balaji","jljlj"),
+        ("walke","kjkjkj")
+    ]
+
+
+@pytest.mark.parametrize("username,password",get_data())
+def test_dologin(username,password):
+    print(username,"----",password)
+
+
+
+
+
