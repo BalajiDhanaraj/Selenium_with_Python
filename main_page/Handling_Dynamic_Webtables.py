@@ -10,10 +10,10 @@ driver.get("https://www.espncricinfo.com/series/a20-league-2020-21-1255254/point
 driver.maximize_window()
 driver.implicitly_wait(1)
 
-rows = driver.find_element(by=By.XPATH,value="//tbody/tr")
+rows = driver.find_elements(by=By.XPATH,value="//tbody/tr")
 total_rows = len(rows)
 
-cols = driver.find_element(by=By.XPATH,value="//tbody/tr[1]/td")
+cols = driver.find_elements(by=By.XPATH,value="//tbody/tr[1]/td")
 total_cols = len(cols)
 
 print("Total rows are : ", total_rows, " and total cols are : ", total_cols)
@@ -32,3 +32,6 @@ for row in range(1, total_rows + 1):
     for col in range(1, total_cols + 1):
         print(driver.find_element(by=By.XPATH,value=start_xpath + str(row) + mid_xpath + str(col) + end_xpath).text, end=" ")
     print()
+
+driver.quit()
+driver.close()
