@@ -19,12 +19,12 @@ def before():
     print("Closing browser")
 
 
-# def test_dologin(setup,before):
-#     print("Executing login test")
-#
-#
-# def test_user_reg(setup,before):
-#     print("Executing User Reg test")
+def test_dologin(setup,before):
+    print("Executing login test")
+
+
+def test_user_reg(setup,before):
+    print("Executing User Reg test")
 
 @pytest.mark.usefixtures("setup", "before")
 def test_dologin():
