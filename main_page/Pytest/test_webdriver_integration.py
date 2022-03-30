@@ -37,7 +37,7 @@ def setup_function():
 def teardown_function():
     driver.quit()
 
-
+@pytest.mark.usefixtures("log_on_failure")
 @pytest.mark.parametrize("username,password", get_data())
 def test_dologin(username, password, get_browser):
     driver = get_browser
