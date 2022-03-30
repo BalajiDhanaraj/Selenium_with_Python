@@ -1,3 +1,5 @@
+import allure
+from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -32,3 +34,4 @@ def test_dologin(username, password, get_browser):
     driver = get_browser
     driver.find_element_by_id("email").send_keys(username)
     driver.find_element_by_id("pass").send_keys(password)
+    allure.attach(driver.get_screenshot_as_png(),name="dologin",attachment_type=AttachmentType.png)
