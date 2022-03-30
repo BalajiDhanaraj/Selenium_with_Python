@@ -9,6 +9,15 @@ import pytest
 
 # parallel test
 
+@pytest.fixture()
+def log_on_failure(request,get_browser):
+    yield
+    item = request.node
+    driver = get_browser
+    if item.rep_call.failed:
+        allure.attach(driver.get_screenshot_as_png(), name="dologin", attachment_type=AttachmentType.PNG)
+
+
 def get_data():
     return [
 
