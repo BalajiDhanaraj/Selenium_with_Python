@@ -26,9 +26,9 @@ Mobileno = driver.find_element(by=By.XPATH,value="//*[contains(@name,'reg_email_
 
 Password = driver.find_element(by=By.XPATH,value="//*[@type='password']").send_keys("Walker")
 #
-# Day = driver.find_element_by_xpath("//*[@id='day']/option[17]")
-# Month = driver.find_element_by_xpath("//*[@id='month']/option[7]")
-# Year = driver.find_element_by_xpath("//*[@id='year']/option[@value='1999']")
+Day = driver.find_element_by_xpath("//*[@id='day']/option[17]")
+Month = driver.find_element_by_xpath("//*[@id='month']/option[7]")
+Year = driver.find_element_by_xpath("//*[@id='year']/option[@value='1999']")
 Gender = driver.find_element(by=By.XPATH,value="//label[contains(.,'Male')]").click()
 
 
