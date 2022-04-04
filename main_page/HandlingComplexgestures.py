@@ -74,7 +74,7 @@ driver.quit()"""
 
 ## Right click on the img or context
 
-"""driver.get("https://deluxe-menu.com/popup-mode-sample.html")
+driver.get("https://deluxe-menu.com/popup-mode-sample.html")
 
 driver.implicitly_wait(50)
 
@@ -90,7 +90,7 @@ ActionChains(driver).context_click(clickproduct).perform()
 
 time.sleep(2)
 driver.close()
-driver.quit()"""
+driver.quit()
 
 
 
